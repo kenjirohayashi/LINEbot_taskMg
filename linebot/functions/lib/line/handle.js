@@ -55,8 +55,8 @@ exports.app = async(event) => {
       const list = await API.join(todos);
       return client.replyMessage(event.replyToken, list);
 
-    case "howto":
-      return client.replyMessage(event.replyToken, Text.howto); 
+    case "@howto":
+      return client.replyMessage(event.replyToken, [Text.howto,Text.menu]); 
     default :
       return client.replyMessage(event.replyToken, Text.menu); 
   }
