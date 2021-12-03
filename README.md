@@ -25,3 +25,28 @@ LINEbot_todoのアップデート版です
   <li>タスクを一覧表示して、完了をタップ</li>
 </ul>
 
+<h2>使用した技術</h2>
+<h3>フロントエンド</h3>
+<ul>
+ <li>LINE</li>
+</ul>
+
+<h3>バックエンド</h3>
+<ul>
+<li>Node.js（Express)</li>
+<li>firebase(cloud functions, firestore)</li>
+<li>Messaging API</li>
+<li>dayJs</li>
+</ul>
+
+
+<h3>WebView</h3>
+<ul>
+<li>LIFF（LINE SDK)</li>
+<li>ReactHooks</li>
+<li>Material-UI</li>
+<li>firebase(Hosting, firestore)</li>
+ </ul>
+
+
+
