@@ -58,12 +58,13 @@ const useStyles = makeStyles((theme) =>
   
 function App() {
   const classes = useStyles();
+
   const [name, setName] = useState("");
   const [deadLine, setDeadLine] = useState(null);
   const [notice, setNotice] = useState(null);
-  const [submit , setSubmit] = useState(false);
   const [uid, setUid] = useState("");
 
+  const [submit , setSubmit] = useState(false);
   const [isNotice, setIsNotice] = useState(false);
 
   useEffect(() => {
@@ -86,14 +87,12 @@ function App() {
   const post = async() => {
     setSubmit(true);
     if(!name || (!notice && isNotice)){
-      return;
+      return false;
     }
-      await addTodo(name, dayjs(deadLine).format("YYYY年MM月DD日"), dayjs(notice).format("YYYY/MM/DD HH:mm"), uid);
+    const closed = deadLine ? dayjs(deadLine).format("YYYY年MM月DD日") : "なし";
+    const notification = notice ? dayjs(notice).format("YYYY/MM/DD HH:mm") : "なし";
+      await addTodo(name, closed, notification, uid);
       liff.closeWindow();
-      setName("");
-      setDeadLine("");
-      setNotice("");
-      setSubmit(false);
   }
 
   return (

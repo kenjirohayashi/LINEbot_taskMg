@@ -65,7 +65,7 @@ exports.join = (datas) => {
                 },
             ],
         "title" : datas[i].todoName,
-        "text" : "期日 : " + datas[i].deadLine,
+        "text" : "締切 : " + datas[i].deadLine + "\n" + "通知 : " + datas[i].notice,
         }
       },
     )
@@ -75,7 +75,7 @@ exports.join = (datas) => {
 
 module.exports.remindTodo = async (now) => {
   const todo = await db.collection("todos")
-  .where("notice", "==", now); //uidが一致するもの指定
+  .where("notice", "==", now); //現在時刻と通知時刻が一致する
   return todo.get().then((snapshot) => {
     let todos = [];
     snapshot.forEach((doc)=>{ 

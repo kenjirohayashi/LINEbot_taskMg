@@ -45,8 +45,6 @@ exports.app = async(event) => {
 
 // ------------------------------------------登録/一覧表示/メニュー---¬---------------------------------------
   switch(event.message.text){
-    case "登録":
-      return client.replyMessage(event.replyToken, Text.register)
     case "@show":
       const todos = await API.getTodo(event.source.userId);
       if(todos.length==0){ //タスクがない
@@ -57,28 +55,29 @@ exports.app = async(event) => {
 
     case "@howto":
       return client.replyMessage(event.replyToken, [Text.howto,Text.menu]); 
+      
     default :
       return client.replyMessage(event.replyToken, Text.menu); 
   }
-
 }
 
-  exports.registerMessage = (uid, name) => {
-    // console.log(uid);
-    client.pushMessage(uid ,{
-      type :"text",
-      text : "「" + name + "」" + "を登録しました！",
-    },);
-  }
+exports.registerMessage = (uid, name) => {
+  // console.log(uid);
+  client.pushMessage(uid ,{
+    type :"text",
+    text : "「" + name + "」" + "を登録しました！",
+  },);
+}
 
-  exports.reminder = async() => {
-    const now = dayjs().tz().format("YYYY/MM/DD HH:mm");
-    // console.log(now);
-    const todos = await API.remindTodo(now);
-    todos.forEach((doc) => {
-      client.pushMessage(doc.userId,{
-        type:"text",
-        text: "「" + doc.todoName + "」"  + "の時間だよ！\n頑張って！！",
-      })
+exports.reminder = async() => {
+  const now = dayjs().tz().format("YYYY/MM/DD HH:mm");
+  // console.log(now);
+  const todos = await API.remindTodo(now);
+  todos.forEach((doc) => {
+    client.pushMessage(doc.userId,{
+      type:"text",
+      text: "「" + doc.todoName + "」"  + "の時間だよ！\n頑張って！！",
     })
-  }
+  })
+}
+  
