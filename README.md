@@ -5,12 +5,9 @@ LINEbot_todoのアップデート版です
  <img width="218" alt="QRコード" src="https://user-images.githubusercontent.com/79906992/132246620-b878a0f0-48a7-4b7e-8fbc-7e31999fd01c.png">
 
 <h2>使用方法</h2>
-<ul>
-  <img width="218" alt="image1" src="https://user-images.githubusercontent.com/79906992/140652973-a2f1ac93-326f-4d3b-a567-8380df60b2dc.PNG">
-  <img width="218" alt="image2" src="https://user-images.githubusercontent.com/79906992/140653001-10e9f1a1-1c2e-47c1-bf8c-7064a8573427.PNG">
-  <img width="218" alt="image3" src="https://user-images.githubusercontent.com/79906992/140653020-5906aa66-3b97-485e-ba9f-594722c4fc81.PNG">
-   <img width="218" alt="image3" src="https://user-images.githubusercontent.com/79906992/140653036-9ef4fbf9-8e21-49c5-9cc1-7f229d94011c.PNG">
-</ul>
+
+<img width="218" alt="使い方マニュアル" src="https://user-images.githubusercontent.com/79906992/157609883-93921df3-f203-4a50-babe-996ddf772c24.gif">
+
 <h3>登録</h3>
 <ol>
   <li>リッチメニューより登録をタップ。</li>
